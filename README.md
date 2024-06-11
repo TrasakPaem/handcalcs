@@ -66,9 +66,9 @@ For example:
 
 ```python
 %%render
-a = 2
+a_star = 2
 b = 3
-c = 2*a + b/3
+c = 2*a_star + b/3
 ```
 
 **That is it!**
