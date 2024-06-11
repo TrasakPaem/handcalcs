@@ -4,7 +4,7 @@
     "latex_block_end": "\\]",
     "math_environment_start": "aligned",
     "math_environment_end": "aligned",
-    "line_break": "\\\\[20pt]",
+    "line_break": "\\\\[10pt]",
     "use_scientific_notation": false,
     "display_precision": 3,
     "underscore_subscripts": true,
