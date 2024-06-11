@@ -2994,7 +2994,7 @@ def swap_star_notation(d: deque, **config_options) -> deque:
             new_item = swap_star_notation(item)
             swapped_deque.append(new_item)
         elif isinstance(item, str):
-            new_item = item.replace("_star", "*")
+            new_item = item.replace("_star", "^*")
             swapped_deque.append(new_item)
         else:
             swapped_deque.append(item)
