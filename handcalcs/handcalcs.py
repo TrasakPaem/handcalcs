@@ -2061,6 +2061,7 @@ def swap_symbolic_calcs(
         swap_comparison_ops,
         swap_for_greek,
         swap_prime_notation,
+        swap_star_notation,
         swap_long_var_strs,
         swap_double_subscripts,
         extend_subscripts,
@@ -2098,6 +2099,7 @@ def swap_numeric_calcs(
         swap_values,
         swap_for_greek,
         swap_prime_notation,
+        swap_star_notation,
         swap_superscripts,
         swap_double_subscripts,
         extend_subscripts,
@@ -2981,6 +2983,22 @@ def swap_prime_notation(d: deque, **config_options) -> deque:
             swapped_deque.append(item)
     return swapped_deque
 
+def swap_star_notation(d: deque, **config_options) -> deque:
+    """
+    Returns a deque representing 'd' with all elements
+    with  "_star" substrings replaced with "*".
+    """
+    swapped_deque = deque([])
+    for item in d:
+        if isinstance(item, deque):
+            new_item = swap_star_notation(item)
+            swapped_deque.append(new_item)
+        elif isinstance(item, str):
+            new_item = item.replace("_star", "*")
+            swapped_deque.append(new_item)
+        else:
+            swapped_deque.append(item)
+    return swapped_deque
 
 def swap_values(pycode_as_deque: deque, tex_results: dict, **config_options) -> deque:
     """
